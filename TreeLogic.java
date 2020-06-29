@@ -1,10 +1,12 @@
-package NewRakuten;
-
+import java.time.Duration;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class TreeLogic {
 	public static void main(String[] args) {
+		long startTime = System.nanoTime();
 		//Sample Inputs
 		int[] input = new int[] {1, 5, 7, 9, 3, 2, 5, 1};
 		//int[] input = new int[] {3, 7, 4, 5};
@@ -38,6 +40,10 @@ public class TreeLogic {
 		} else {
 			System.out.println("No. of minimum moves:" + firstSeqCount);
 		}
+		
+		long endTime   = System.nanoTime();
+		
+		System.out.println("Time for execution:" + (endTime - startTime)/1000 + " milliSeconds");
 	}
 
 	public static int ChangeCount(List<String> _outputSeq, List<String> _compSeq) {
